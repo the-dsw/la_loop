@@ -10,3 +10,51 @@ body{
 .navbar-header img:hover{
 	transform: rotate(360deg);
 }  
+#Weather {
+    width: 350px;
+    height: 200px;
+    background: rgba(0,0,0,.4);
+    border-radius: 10px;
+    border: 1px solid #CCC;
+    text-align: justify;
+    padding-top: 30px;
+}
+.tbColorWeather {
+    color: white;
+}
+.tbVille {
+    text-transform: uppercase;
+}
+.img-thumbnail {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #999999;
+    border: 0px;
+    border-radius: 4px;
+}
+#imgWeather {
+    float: left;
+    padding-top: 6px;
+    margin-left: 2px;
+}
+.label-warning {
+    background-color: #f0ad4e;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.label-default {
+    background-color: #5a5a86;
+}

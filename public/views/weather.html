@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div class="row">
+        <br><br>
+        <div class="col-md-4">
+            <h1>Weather Predictor</h1>
+
+            <div class="input-group">
+                <input type="text" id="country" class="form-control" placeholder="Eg. London, Paris, San Francisco..." ng-model="city">
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-success" ng-click="meteo()" type="button">Go!</button>
+                </span>
+            </div><!-- /input-group -->
+
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-6" id="Weather" ng-show = tbWeather>
+            <div id="imgWeather">
+                <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon}}.png" />
+            </div>
+            <div id="tbWeatherWeather">
+                <table>
+                    <tr>
+                        <td><span class="tbColorWeather">City of:</span> <span class="tbVille">{{ville}}</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° now:</span> <span class="label label-warning ">{{temp}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Pressure:</span> {{pressure}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Humidity:</span> {{humidity}} %</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° minimal:</span> <span class="label label-default ">{{temp_min}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° maximal:</span> <span class="label label-warning ">{{temp_max}} °C</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div><!-- /.col-lg-6 -->
+    </div>
+</div>
