@@ -1,133 +1,133 @@
-<form class="form-horizontal">
+<form class="form-horizontal" name="inscriptionform">
 
-<!-- Form Name -->
-<legend>Inscription</legend>
+  <!-- Form Name -->
+  <legend>Inscription</legend>
 
-<!-- Nick Name-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Nick Name">Nick Name</label>
-  <div class="col-md-4">
-  <input id="Nick Name" name="Nick Name" ng-model="datas.nickname" ng-max-length="14" type="text" placeholder="Your Nick Name" class="form-control input-md" required="">
-
+  <!-- Nick Name-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Nick Name">Nick Name</label>
+    <div class="col-md-4">
+      <input id="Nick Name" name="nickname" ng-pattern="/^[A-Za-z0-9]+$/" ng-model="datas.nickname" ng-maxlength="14" type="text" placeholder="Your Nick Name" class="form-control input-md" required="">
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- First Name -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="First Name">First Name</label>
-  <div class="col-md-4">
-  <input id="First Name" name="First Name" ng-model="datas.firstname" ng-max-length="14" type="text" placeholder="Your First Name" class="form-control input-md" required="">
-
+  <!-- First Name -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="First Name">First Name</label>
+    <div class="col-md-4">
+      <input id="First Name" name="firstName" ng-pattern="/^[\w-]+$/" ng-model="datas.firstName" ng-maxlength="14" type="text" placeholder="Your First Name" class="form-control input-md" required="">
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Last Name -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Last Name">Last Name</label>
-  <div class="col-md-4">
-  <input id="Last Name" name="Last Name" ng-model="datas.lastname" ng-max-length="14" type="text" placeholder="Your Last Name" class="form-control input-md" required="">
-
+  <!-- Last Name -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Last Name">Last Name</label>
+    <div class="col-md-4">
+      <input id="Last Name" name="lastName" ng-pattern="/^[\w-]+$/" ng-model="datas.lastName" ng-maxlength="14" type="text" placeholder="Your Last Name" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Birth Day -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Birth Day">Birth Day</label>
-  <div class="col-md-4">
-  <input id="Birth Day" name="Birth Day" ng-model="datas.birthday" type="text" placeholder="" class="form-control input-md" required="">
+  <!-- Birth Day -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Birthday">Birthday</label>
+    <div class="col-md-4">
+      <input id="Birth Day" name="birthday" ng-model="datas.birthday" type="date" placeholder="" class="form-control input-md" required>
 
+    </div>
   </div>
-</div>
 
-<!-- Sexe -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Sexe">Sexe</label>
-  <div class="col-md-4">
-    <select id="Sexe" name="Sexe" ng-model="datas.sexe" class="form-control">
-      <option value="0">Man</option>
-      <option value="1">Woman</option>
-    </select>
+  <!-- Sexe -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Sexe">Sexe</label>
+    <div class="col-md-4">
+      <select id="Sexe" name="sexe" ng-model="datas.sexe" class="form-control">
+        <option value="0" checked>Man</option>
+        <option value="1">Woman</option>
+      </select>
+    </div>
   </div>
-</div>
 
-<!-- Adress 1 -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Adress 1">Address 1</label>
-  <div class="col-md-4">
-  <input id="Address 1" name="Address 1" ng-model="datas.address1" ng-max-length="40" type="text" placeholder="ex. 54 road street newton" class="form-control input-md" required="">
-
+  <!-- Adress 1 -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Adress 1">Address 1</label>
+    <div class="col-md-4">
+      <input id="Address 1" name="address1" ng-model="datas.address1" ng-maxlength="40" type="text" placeholder="ex. 54 road street newton" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Adress 2 -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Adress 2">Address 2</label>
-  <div class="col-md-4">
-  <input id="Address 2" name="Address 2" ng-model="datas.address2" ng-max-length="40" type="text" placeholder="ex. apt 65 floor 3" class="form-control input-md">
-
+  <!-- Adress 2 -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Adress 2">Address 2</label>
+    <div class="col-md-4">
+    <input id="Address 2" name="address2" ng-model="datas.address2" ng-maxlength="40" type="text" placeholder="ex. apt 65 floor 3" class="form-control input-md">
+    <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- City -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="City">City</label>
-  <div class="col-md-4">
-  <input id="City" name="City" type="text" ng-model="datas.city" ng-max-length="20" placeholder="ex. London" class="form-control input-md" required="">
-
+  <!-- City -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="City">City</label>
+    <div class="col-md-4">
+      <input id="City" name="city" type="text" ng-model="datas.city" ng-maxlength="20" placeholder="ex. London" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Postal code -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Postal code">Postal code</label>
-  <div class="col-md-4">
-  <input id="Postal code" name="Postal code" ng-model="datas.postalcode" ng-max-length="5" type="text" placeholder="ex. 56000" class="form-control input-md" required="">
-
+  <!-- Postal code -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Postal code">Postal code</label>
+    <div class="col-md-4">
+      <input id="Postal code" name="postalCode" ng-model="datas.postalCode" ng-pattern="/\d+/" ng-maxlength="5" type="text" placeholder="ex. 56000" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Country -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Country">Country</label>
-  <div class="col-md-4">
-  <input id="Country" name="Country" type="text" ng-model="datas.country" ng-max-length="20" placeholder="ex. England" class="form-control input-md" required="">
+  <!-- Country -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Country">Country</label>
+    <div class="col-md-4">
+      <input id="Country" name="country" type="text" ng-model="datas.country" ng-maxlength="20" placeholder="ex. England" class="form-control input-md" required>
 
+    </div>
   </div>
-</div>
 
-<!-- Email -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Email">Email</label>
-  <div class="col-md-4">
-  <input id="Email" name="Email" type="text" ng-model="datas.email" placeholder="ex. youadress@mail.fr" class="form-control input-md" required="">
-
+  <!-- Email -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Email">Email</label>
+    <div class="col-md-4">
+      <input id="Email" name="Email" type="text" ng-model="datas.email" ng-pattern="/^[\w-+]+(.[\w-]+)@[\w-]+(.[\w-]+).[\w-]{2,4}$/" placeholder="ex. youadress@mail.fr" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Password -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Password">Password</label>
-  <div class="col-md-4">
-    <input id="Password" name="Password" ng-model="datas.password" type="password" ng-min-length="6" placeholder="" class="form-control input-md" required="">
-
+  <!-- Password -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Password">Password</label>
+    <div class="col-md-4">
+      <input id="Password" name="password" ng-model="datas.password" type="password" ng-milength="6" placeholder="" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Password repeat -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Password repeat">Password repeat</label>
-  <div class="col-md-4">
-    <input id="Password repeat" ng-model="datas.passwordRepeat" name="Password repeat" ng-min-length="6" type="password" placeholder="" class="form-control input-md" required="">
-
+  <!-- Password repeat -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="Password repeat">Password repeat</label>
+    <div class="col-md-4">
+      <input id="Password repeat" ng-model="datas.passwordRepeat" name="passwordRepeat" ng-milength="6" type="password" placeholder="" class="form-control input-md" required>
+      <span class="glyphicon glyphicon-pencil" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-remove" ng-show="" aria-hidden="true"></span><span class="glyphicon glyphicon-ok" ng-show="" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<!-- Submit Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for=""></label>
-  <div class="col-md-4">
-    <button id="" name="" class="btn btn-success">Submit</button>
+  <!-- Submit Button -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for=""></label>
+    <div class="col-md-4">
+      <button id="" name="" ng-disabled="inscriptionform.$invalid" class="btn btn-success">Submit</button>
+    </div>
   </div>
-</div>
 
 </form>
