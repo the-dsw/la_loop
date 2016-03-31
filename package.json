@@ -1,0 +1,27 @@
+{
+  "name": "la_loop",
+  "version": "1.0.0",
+  "description": "1st hackathon project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/IbanGF/la_loop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IbanGF/la_loop/issues"
+  },
+  "homepage": "https://github.com/IbanGF/la_loop#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.7.0"
+  }
+}
