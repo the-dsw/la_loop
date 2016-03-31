@@ -26,12 +26,12 @@ var userSchema = new mongoose.Schema({
         type: Boolean,
         required: [true, 'sexe required']
     },
-    addresse1: {
+    address1: {
         type: String,
         maxlength: [40, 'addresse1 can have a maximum of 40 char'],
         required: [true, 'addresse1 required']
     },
-    addresse2: {
+    address2: {
         type: String,
         maxlength: [40, 'addresse2 can have a maximum of 40 char'],
     },
@@ -91,8 +91,8 @@ var User = {
             lastName: req.body.lastName,
             birthday: req.body.birthday,
             sexe: req.body.sexe,
-            addresse1: req.body.addresse1,
-            addresse2: req.body.addresse2,
+            address1: req.body.address1,
+            address2: req.body.address2,
             postalCode: req.body.postalCode,
             city: req.body.city,
             country: req.body.country,

@@ -81,7 +81,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="City">City</label>
         <div class="col-md-4">
-            <input id="City" name="city" type="text" ng-model="datas.city" ng-maxlength="20" placeholder="ex. London" class="form-control input-md" required>
+            <input id="City" name="city" type="text" ng-model="datas.city" ng-maxlength="20" placeholder="ex. London" class="form-control input-md" ng-autocomplete='result_city' options="{types: '(cities)'}" required>
             <span class="input-group-addon">
           <span class="glyphicon" ng-class='(inscriptionform.city.$dirty && inscriptionform.city.$error.pattern) ? "glyphicon-remove red" : datas.city ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
             </span>
