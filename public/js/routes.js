@@ -1,5 +1,5 @@
 function routes($routeProvider) {
-    for (var i = 1; i < 4; i++) {
+    for (var i = 0; i < 4; i++) {
         $routeProvider.when('/inscription/inscription-' + i, {
             templateUrl: 'views/inscription/inscription-' + i + '.html',
             controller: 'subscribeController'
@@ -7,10 +7,13 @@ function routes($routeProvider) {
     }
     $routeProvider
         .when('/', {
-            templateUrl: 'views/inscription/inscription-1.html',
+            templateUrl: 'views/inscription/inscription-0.html',
             controller: 'subscribeController'
         })
+        .when('/index', {
+            templateUrl: 'views/index.html'
+        })
         .otherwise({
-            redirectTo: '/inscription/inscription-1'
+            redirectTo: '/inscription/inscription-0'
         });
 }
