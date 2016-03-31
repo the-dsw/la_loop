@@ -74,7 +74,7 @@ var userSchema = new mongoose.Schema({
         date: Date,
         sport: String,
         weather: {},
-        kml: {}
+        GeoJson: Object
     }],
 });
 

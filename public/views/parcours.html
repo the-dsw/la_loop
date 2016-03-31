@@ -1,0 +1,13 @@
+<ng-map default-style="true" center="current-location" zoom="6">
+    <info-window position="current-location">
+        <span>Loation found using HTML5.</span>
+    </info-window>
+</ng-map>
+
+<!--FileUpload.html-->
+<input type="file" onchange="angular.element(this).scope().onFileUpload(this)">
+<br /> {{fileInputContent}}
+<!--<div id="map"></div>
+<div id="drop-container">
+    <div id="drop-silhouette"></div>
+</div>-->

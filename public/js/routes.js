@@ -14,7 +14,16 @@ function routes($routeProvider) {
             templateUrl: 'views/index.html'
         })
         .when('/parcours', {
-            templateUrl: 'views/parcours.html'
+            templateUrl: 'views/parcours.html',
+            controller: 'parcoursController'
+        })
+        .when('/weather', {
+            templateUrl: 'views/weather.html',
+            controller: 'weatherController'
+        })
+        .when('/fileUpload', {
+            templateUrl: "fileUpload.html",
+            controller: "fileUploadCtrl"
         })
         .otherwise({
             redirectTo: '/inscription/inscription-0'
