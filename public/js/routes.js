@@ -7,6 +7,9 @@ function routes($routeProvider) {
         .when('/about', {
             templateUrl: 'views/about.html'
         })
+        .when('/inscription', {
+            templateUrl: 'views/inscription/inscription.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
