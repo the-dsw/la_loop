@@ -1,4 +1,5 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'ngAutocomplete', 'flow'])
     .config(routes)
-    .controller('userController', userController)
+    .controller('subscribeController', subscribeController)
     .service('userService', userService)
+    .factory('userFactory', userFactory)

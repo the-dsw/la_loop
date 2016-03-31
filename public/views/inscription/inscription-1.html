@@ -1,0 +1,106 @@
+<form class="form-horizontal" name="inscriptionform">
+
+    <!-- Form Name -->
+    <legend>Subscribe</legend>
+
+    <div class="form-group">
+			<label class="col-md-4 control-label" for="continuer"></label>
+			<div class="col-md-4">
+				<div flow-init="{target: '/upload', singleFile: true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" flow-name="uploader.flow" flow-files-added="processFiles($files)">
+					<div ng-repeat="image in uploader.flow.files track by $index">
+						<center>
+							<span class="text"></span><img ng-show="out" class="preview" flow-img="image" />
+							<br>
+							<span class="text"></span> <img class="preview" ng-src="{{imageStrings[$index]}}" />
+							<p>
+								<span class="btn glyphicon glyphicon-trash" ng-show="$flow.files.length" ng-click="image.cancel()"></span>
+							</p>
+						</center>
+					</div>
+					<center>
+						<button flow-btn flow-attrs="{accept:'image/*'}" type="file" ng-click="photoUser=2" class="btn btn-success">Download Picture</button>
+					</center>
+				</div>
+			</div>
+		</div>
+
+    <!-- Nick Name-->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="Nick Name">Nick Name</label>
+        <div class="col-md-4">
+            <input id="Nick Name" name="nickname" ng-pattern="/^[A-Za-z0-9]+$/" ng-model="datas.nickname" ng-maxlength="14" type="text" placeholder="Your Nick Name" class="form-control input-md" required="">
+            <span class="input-group-addon">
+          <span class="glyphicon" ng-class='(inscriptionform.nickname.$dirty && inscriptionform.nickname.$error.pattern) ? "glyphicon-remove red" : datas.nickname ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- First Name -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="First Name">First Name</label>
+        <div class="col-md-4">
+            <input id="First Name" name="firstName" ng-pattern="/^[\w-]+$/" ng-model="datas.firstName" ng-maxlength="14" type="text" placeholder="Your First Name" class="form-control input-md" required="">
+            <span class="input-group-addon">
+          <span class="glyphicon" ng-class='(inscriptionform.firstName.$dirty && inscriptionform.firstName.$error.pattern) ? "glyphicon-remove red" : datas.firstName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="Last Name">Last Name</label>
+        <div class="col-md-4">
+            <input id="Last Name" name="lastName" ng-pattern="/^[\w-]+$/" ng-model="datas.lastName" ng-maxlength="14" type="text" placeholder="Your Last Name" class="form-control input-md" required>
+            <span class="input-group-addon">
+          <span class="glyphicon" ng-class='(inscriptionform.lastName.$dirty && inscriptionform.lastName.$error.pattern) ? "glyphicon-remove red" : datas.lastName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+            </span>
+        </div>
+    </div>
+
+    <!-- Birth Day -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="Birthday">Birthday</label>
+        <div class="col-md-4">
+            <input id="Birthday" name="birthday" ng-model="datas.birthday" type="date" class="form-control input-md" required>
+        </div>
+    </div>
+
+    <!-- Sexe -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="sexe">Sexe</label>
+      <div class="col-md-4">
+        <label class="radio-inline" for="sexe-0">
+          <input type="radio" ng-click="man()" name="sexe" id="sexe-0">
+          Man
+        </label>
+        <label class="radio-inline" for="sexe-1">
+          <input type="radio"  ng-click="woman()" name="sexe" id="sexe-1">
+          Woman
+        </label>
+      </div>
+    </div>
+
+    <!-- Message errors -->
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+
+            <li ng-show="inscriptionform.nickname.$dirty && inscriptionform.nickname.$error.pattern" class='alert alert-warning'>
+                <span class='glyphicon glyphicon-remove'></span> A nickname consists of numbers and / or letters
+            </li>
+            <li ng-show="inscriptionform.firstName.$dirty && inscriptionform.firstName.$error.pattern" class='alert alert-warning'>
+                <span class='glyphicon glyphicon-remove'></span> A first name consists of letters
+            </li>
+            <li ng-show="inscriptionform.lastName.$dirty && inscriptionform.lastName.$error.pattern" class='alert alert-warning'>
+                <span class='glyphicon glyphicon-remove'></span> A last name consists of letters
+            </li>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" for=""></label>
+        <div class="col-md-4">
+            <button id="" name="" ng-click="step()" ng-disabled="inscriptionform.$invalid" class="btn btn-success" style="float:right">Next</button>
+        </div>
+    </div>
+</form>
