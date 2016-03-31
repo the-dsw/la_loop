@@ -113,11 +113,21 @@ var User = {
     },
 
 
-    findAll: function (req, res) {
-        User.model.find(function (err, data) {
-            res.send(data);
-        });
+    findUser: function (req, res) {
+        User.model.find({
+                _id: req.params.id
+            },
+            function (err, data) {
+                if (!err) {
+                    console.log(data);
+                    res.send(data);
+                } else {
+                    console.log(err);
+                    res.sendStatus(400);
+                }
+            });
     },
+
 
 
     update: function (req, res) {

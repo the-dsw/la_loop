@@ -1,4 +1,5 @@
 angular.module('app', ['ngRoute'])
     .config(routes)
-    .controller('userController', userController)
+    .controller('subscribeController', subscribeController)
     .service('userService', userService)
+    .factory('userFactory', userFactory)
