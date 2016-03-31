@@ -13,6 +13,9 @@ function routes($routeProvider) {
         .when('/index', {
             templateUrl: 'views/index.html'
         })
+        .when('/parcours', {
+            templateUrl: 'views/parcours.html'
+        })
         .otherwise({
             redirectTo: '/inscription/inscription-0'
         });
