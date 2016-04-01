@@ -70,13 +70,27 @@ var userSchema = new mongoose.Schema({
         default: Date.now
     },
     lastLogin: Date,
-    history: [{
-        date: Date,
-        sport: String,
-        weather: {},
-        GeoJson: Object
+    activities: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Activities'
     }],
 });
+
+// activities shema
+
+var activitiesSchema = new mongoose.Schema({
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    sport: String,
+    GeoJson: {
+        type: Object,
+        required: [true, 'traces required']
+    }
+});
+
+
 
 // REST function User
 
@@ -129,13 +143,15 @@ var User = {
     },
 
 
-
-    update: function (req, res) {
-        User.model.findByIdAndUpdate(req.params.id, {
-            description: req.body.description
-        }, function () {
-            res.sendStatus(200);
-        })
+    updateUserActivities: function (userId, activity, res) {
+        User.model.findByIdAndUpdate(userId, {
+                $push: {
+                    activities: activity._id
+                }
+            },
+            function (err, data) {
+                res.sendStatus(200);
+            });
     },
 
 
@@ -143,7 +159,24 @@ var User = {
         User.model.findByIdAndRemove(req.params.id, function () {
             res.sendStatus(200);
         })
-    }
-}
+    },
 
+    modelA: mongoose.model('Activities', activitiesSchema),
+
+    createActivity: function (req, res) {
+        var userId = req.body.id,
+            response = res;
+        User.modelA.create({
+            sport: req.body.sport,
+            GeoJson: req.body.GeoJson
+        }, function (err, data) {
+            if (!err) {
+                User.updateUserActivities(userId, data, response);
+            } else {
+                res.sendStatus(400);
+            }
+        });
+    },
+
+}
 module.exports = User;
