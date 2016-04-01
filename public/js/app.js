@@ -1,6 +1,7 @@
 angular.module('app', ['ngRoute', 'ngMap', 'ngAutocomplete', 'flow'])
     .config(routes)
     .controller('subscribeController', subscribeController)
+    .controller('mainController', mainController)
     .controller('parcoursController', parcoursController)
     .controller('weatherController', weatherController)
     .service('userService', userService)
