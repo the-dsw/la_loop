@@ -1,4 +1,4 @@
-<form class="form-horizontal" name="inscriptionform">
+<form class="form-horizontal subscribe" name="inscriptionform">
 
     <!-- Form Name -->
     <legend>Subscribe</legend>
@@ -28,10 +28,12 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="Nick Name">Nick Name</label>
         <div class="col-md-4">
+          <div class="input-group">
             <input id="Nick Name" name="nickname" ng-pattern="/^[A-Za-z0-9]+$/" ng-model="datas.nickname" ng-maxlength="14" type="text" placeholder="Your Nick Name" class="form-control input-md" required="">
             <span class="input-group-addon">
-          <span class="glyphicon" ng-class='(inscriptionform.nickname.$dirty && inscriptionform.nickname.$error.pattern) ? "glyphicon-remove red" : datas.nickname ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+              <span class="glyphicon" ng-class='(inscriptionform.nickname.$dirty && inscriptionform.nickname.$error.pattern) ? "glyphicon-remove red" : datas.nickname ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
             </span>
+          </div>
         </div>
     </div>
 
@@ -39,10 +41,12 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="First Name">First Name</label>
         <div class="col-md-4">
+          <div class="input-group">
             <input id="First Name" name="firstName" ng-pattern="/^[\w-]+$/" ng-model="datas.firstName" ng-maxlength="14" type="text" placeholder="Your First Name" class="form-control input-md" required="">
             <span class="input-group-addon">
-          <span class="glyphicon" ng-class='(inscriptionform.firstName.$dirty && inscriptionform.firstName.$error.pattern) ? "glyphicon-remove red" : datas.firstName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+              <span class="glyphicon" ng-class='(inscriptionform.firstName.$dirty && inscriptionform.firstName.$error.pattern) ? "glyphicon-remove red" : datas.firstName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
             </span>
+          </div>
         </div>
     </div>
 
@@ -50,10 +54,12 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="Last Name">Last Name</label>
         <div class="col-md-4">
+          <div class="input-group">
             <input id="Last Name" name="lastName" ng-pattern="/^[\w-]+$/" ng-model="datas.lastName" ng-maxlength="14" type="text" placeholder="Your Last Name" class="form-control input-md" required>
             <span class="input-group-addon">
-          <span class="glyphicon" ng-class='(inscriptionform.lastName.$dirty && inscriptionform.lastName.$error.pattern) ? "glyphicon-remove red" : datas.lastName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
+              <span class="glyphicon" ng-class='(inscriptionform.lastName.$dirty && inscriptionform.lastName.$error.pattern) ? "glyphicon-remove red" : datas.lastName ? "glyphicon-ok green" : "glyphicon-pencil"'></span>
             </span>
+          </div>
         </div>
     </div>
 

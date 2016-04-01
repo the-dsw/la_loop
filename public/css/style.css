@@ -4,6 +4,18 @@ body{
 .navbar-border{
 	border-bottom: 3px solid #F0DB4F;
 }
+.preview {
+  width: 200px;
+  margin: auto;
+  height: auto;
+  border-radius: 50px;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
 .navbar-header img{
 	transition: 0.4s;
 }
@@ -67,12 +79,20 @@ body{
 }
 
 .form-signin {
-  max-width: 420px;
+  max-width: 460px;
   padding: 30px 38px 66px;
   margin: 0 auto;
   background-color: #eee;
   border: 3px dotted rgba(0,0,0,0.1);
   }
+  .subscribe {
+    max-width: 800px;
+    padding: 30px 38px 66px;
+    margin: 0 auto;
+    background-color: #eee;
+    border: 3px dotted rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    }
 
 .form-signin-heading {
   text-align:center;
