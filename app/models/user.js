@@ -159,6 +159,25 @@ var User = {
             });
     },
 
+    login: function (req, res) {
+        User.model.find({
+            nickname: req.body.nickname,
+            password: req.body.password
+        }, function (err, data) {
+            if (!data[0]) {
+                res.send({
+                    statusCode: 'bad login'
+                });
+            } else {
+                res.send({
+                    _id: data[0]._id,
+                    statusCode: 200
+                });
+            }
+
+        });
+
+    },
 
     delete: function (req, res) {
         User.model.findByIdAndRemove(req.params.id, function () {

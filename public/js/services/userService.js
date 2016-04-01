@@ -9,11 +9,14 @@ function userService($http, userFactory) {
                 userFactory.datas.id = e.data.id;
             });
         },
+        delete: function (id) {
+            return $http.delete('/user/' + id);
+        },
         createActivity: function (data) {
             return $http.post('/activities', data);
         },
-        delete: function (id) {
-            return $http.delete('/user/' + id);
+        userLogin: function (data) {
+            return $http.post('/login', data);
         }
     }
 };
