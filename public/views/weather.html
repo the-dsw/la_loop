@@ -1,26 +1,24 @@
-
 <div class="container">
-    <div class="row">
-        <br><br>
-        <div class="col-md-4">
+    <div class="row tmpCurrent">
+        <div class="col-md-4 col-md-offset-3 center">
             <h1>Weather Predictor</h1>
-
             <div class="input-group">
-                <input type="text" id="country" class="form-control" placeholder="Eg. London, Paris, San Francisco..." ng-model="city">
+                <input type="text" id="country" class="form-control" ng-autocomplete placeholder="Eg. London, Paris, San Francisco..." ng-model="city">
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-success" ng-click="meteo()" type="button">Go!</button>
                 </span>
-            </div><!-- /input-group -->
-
-        </div><!-- /.col-lg-6 -->
-        <div class="col-md-6" id="Weather" ng-show = tbWeather>
-            <div id="imgWeather">
-                <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon}}.png" />
             </div>
-            <div id="tbWeatherWeather">
+            <!-- /input-group -->
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-2  weatherWeekCurrent" ng-show=t bWeather>
+            <div class="tbWeatherWeather">
+                <div class="imgWeatherWeekCurrent">
+                    <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon}}.png" />
+                </div>
                 <table>
                     <tr>
-                        <td><span class="tbColorWeather">City of:</span> <span class="tbVille">{{ville}}</span></td>
+                        <td><span class="tbVille tbColorWeather">{{ville}}</span></td>
                     </tr>
                     <tr>
                         <td><span class="tbColorWeather">T° now:</span> <span class="label label-warning ">{{temp}} °C</span></td>
@@ -39,6 +37,110 @@
                     </tr>
                 </table>
             </div>
-        </div><!-- /.col-lg-6 -->
+            <!-- /.col-lg-6 -->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-md-offset-2 weatherWeek" ng-show=t bWeather>
+            <div class="tbWeatherWeather">
+                <div class="imgWeatherWeek">
+                    <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon1}}.png" />
+                </div>
+                <table>
+                    <tr>
+                        <td><span class="tbColorWeather">Date:</span> {{date1}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Pressure:</span> {{pressure1}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Humidity:</span> {{humidity1}} %</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° minimal:</span> <span class="label label-default ">{{temp_min1}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° maximal:</span> <span class="label label-warning ">{{temp_max1}} °C</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2 weatherWeek" ng-show=t bWeather>
+            <div class="tbWeatherWeather">
+                <div class="imgWeatherWeek">
+                    <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon2}}.png" />
+                </div>
+                <table>
+                    <tr>
+                        <td><span class="tbColorWeather">Date:</span> {{date2}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Pressure:</span> {{pressure2}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Humidity:</span> {{humidity2}} %</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° minimal:</span> <span class="label label-default ">{{temp_min2}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° maximal:</span> <span class="label label-warning ">{{temp_max2}} °C</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2 weatherWeek" ng-show=t bWeather>
+            <div class="tbWeatherWeather">
+                <div class="imgWeatherWeek">
+                    <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon3}}.png" />
+                </div>
+                <table>
+                    <tr>
+                        <td><span class="tbColorWeather">Date:</span> {{date3}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Pressure:</span> {{pressure3}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Humidity:</span> {{humidity3}} %</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° minimal:</span> <span class="label label-default ">{{temp_min3}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° maximal:</span> <span class="label label-warning ">{{temp_max3}} °C</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-2 weatherWeek" ng-show=t bWeather>
+            <div class="tbWeatherWeather">
+                <div class="imgWeatherWeek">
+                    <img class="img-thumbnail" ng-src="http://openweathermap.org/img/w/{{icon4}}.png" />
+                </div>
+                <table>
+                    <tr>
+                        <td><span class="tbColorWeather">Date:</span> {{date4}}</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Pressure:</span> {{pressure4}} hPa</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">Humidity:</span> {{humidity4}} %</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° minimal:</span> <span class="label label-default ">{{temp_min4}} °C</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="tbColorWeather">T° maximal:</span> <span class="label label-warning ">{{temp_max4}} °C</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!--<div class="col-md-2" ng-show = tbWeather></div>
+        <div class="col-md-2" ng-show = tbWeather></div>
+        <div class="col-md-2" ng-show = tbWeather></div>
+        <div class="col-md-2" ng-show = tbWeather></div>
+    </div>-->
     </div>
 </div>

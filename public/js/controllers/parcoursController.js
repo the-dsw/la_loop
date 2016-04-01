@@ -5,9 +5,9 @@ function parcoursController($scope, $q, fileInputService, NgMap, userFactory, us
             var file = element.files[0];
             fileInputService.readFileAsync(file).then(function (fileInputContent) {
                 userFactory.datas.GeoJson = fileInputContent;
+                console.log(userFactory.datas.GeoJson);
                 userService.createActivity(userFactory.datas);
             });
         });
     };
-    NgMap.getMap().then(function (map) {});
 }

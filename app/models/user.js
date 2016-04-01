@@ -1,4 +1,5 @@
 // MODEL USER
+var GeoJSON = require('mongoose-geojson-schema');
 var mongoose = require('mongoose');
 
 //Shema User
@@ -85,9 +86,12 @@ var activitiesSchema = new mongoose.Schema({
     },
     sport: String,
     GeoJson: {
-        type: Object,
-        required: [true, 'traces required']
-    }
+        geometry: {
+            type: mongoose.Schema.Types.String,
+            coordinates: mongoose.Schema.Types.Array
+        },
+        properties: mongoose.Schema.Types.Mixed,
+    },
 });
 
 
@@ -144,6 +148,7 @@ var User = {
 
 
     updateUserActivities: function (userId, activity, res) {
+        console.log(userId);
         User.model.findByIdAndUpdate(userId, {
                 $push: {
                     activities: activity._id

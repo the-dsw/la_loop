@@ -3,15 +3,15 @@ function subscribeController($scope, $rootScope, $location, userService, userFac
     $rootScope.navbarplz = false;
 
     // ========= SEXE ============
-    $scope.man = function(){
-      $scope.datas.sexe = false;
+    $scope.man = function () {
+        $scope.datas.sexe = false;
     }
-    $scope.woman = function(){
-      $scope.datas.sexe = true;
+    $scope.woman = function () {
+        $scope.datas.sexe = true;
     }
 
     // ========= STEP FORM 1,2,3, SUBMIT ==========
-    $scope.step = function(e) {
+    $scope.step = function (e) {
         userFactory.datas = $scope.datas;
         userFactory.current++;
         if (userFactory.current == 4) {
@@ -22,7 +22,7 @@ function subscribeController($scope, $rootScope, $location, userService, userFac
         }
         $location.path(path);
     };
-    $scope.stepPrev = function(e) {
+    $scope.stepPrev = function (e) {
         userFactory.datas = $scope.datas;
         userFactory.current--;
         var path = '/inscription/inscription-' + userFactory.current;
@@ -30,22 +30,22 @@ function subscribeController($scope, $rootScope, $location, userService, userFac
     };
 
     //  ============   Flow   =================
-  	$scope.imageStrings = [];
-  	$scope.processFiles = function (files) {
-  		angular.forEach(files, function (flowFile, i) {
-  			var fileReader = new FileReader();
-  			fileReader.onload = function (event) {
-  				var uri = event.target.result;
-  				$scope.imageStrings[i] = uri;
-          userFactory.datas.avatar = $scope.imageStrings[0];
-  			};
-  			fileReader.readAsDataURL(flowFile.file);
-  		});
-  	};
+    $scope.imageStrings = [];
+    $scope.processFiles = function (files) {
+        angular.forEach(files, function (flowFile, i) {
+            var fileReader = new FileReader();
+            fileReader.onload = function (event) {
+                var uri = event.target.result;
+                $scope.imageStrings[i] = uri;
+                userFactory.datas.avatar = $scope.imageStrings[0];
+            };
+            fileReader.readAsDataURL(flowFile.file);
+        });
+    };
 
 
     // =========== Confirm Password ==========
-    $scope.isValidPassword = function(regex) { //isValidPassword('[A-Z]+')
+    $scope.isValidPassword = function (regex) { //isValidPassword('[A-Z]+')
         if ($scope.datas.password !== '') {
             return $scope.datas.password ? !(new RegExp('^.*' + regex + '.*$').test($scope.datas.password)) : false;
         }
@@ -53,7 +53,22 @@ function subscribeController($scope, $rootScope, $location, userService, userFac
     $scope.updatePattern = function () {
         $scope.pattern = new RegExp('^' + $scope.datas.password + '$');
     };
-    $scope.testUntouched = function(element) {
+    $scope.testUntouched = function (element) {
         return $(element).hasClass('ng-valid-pattern');
+    };
+
+    // ===========    User login   ==========
+    $scope.userLog = function () {
+        userService.userLogin({
+            nickname: $scope.userLogin,
+            password: $scope.userPassword
+        }).then(function (res) {
+            if (res.data.statusCode != 200) {
+                $scope.error = 'Utilisateur inconnu';
+            } else {
+                userFactory.datas._id = res.data._id;
+                $location.path('/index');
+            }
+        });
     };
 }
