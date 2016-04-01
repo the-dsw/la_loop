@@ -66,7 +66,7 @@ function subscribeController($scope, $rootScope, $location, userService, userFac
             if (res.data.statusCode != 200) {
                 $scope.error = 'Utilisateur inconnu';
             } else {
-                userFactory.datas._id = res.data._id;
+                userFactory.datas.id = res.data._id;
                 $location.path('/index');
             }
         });
