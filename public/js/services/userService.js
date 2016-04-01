@@ -1,8 +1,8 @@
 // TODO SERVICE
 function userService($http, userFactory) {
     return {
-        get: function () {
-            return $http.get('/user');
+        getUserById: function (id) {
+            return $http.get('/user/' + id);
         },
         create: function (data) {
             return $http.post('/user', data).then(function (e) {

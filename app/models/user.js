@@ -1,9 +1,9 @@
 // MODEL USER
-var GeoJSON = require('mongoose-geojson-schema');
 var mongoose = require('mongoose');
 
 //Shema User
 var userSchema = new mongoose.Schema({
+    avatar: String,
     nickname: {
         type: String,
         maxlength: [14, 'nickname can have a maximum of 14 char'],
@@ -104,6 +104,7 @@ var User = {
 
     create: function (req, res) {
         User.model.create({
+            avatar: req.body.avatar,
             nickname: req.body.nickname,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
