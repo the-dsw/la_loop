@@ -1,6 +1,6 @@
-function subscribeController($scope, $location, userService, userFactory) {
+function subscribeController($scope, $rootScope, $location, userService, userFactory) {
     $scope.datas = userFactory.datas;
-
+    $rootScope.navbarplz = false;
 
     // ========= SEXE ============
     $scope.man = function(){

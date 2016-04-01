@@ -11,7 +11,8 @@ function routes($routeProvider) {
             controller: 'subscribeController'
         })
         .when('/index', {
-            templateUrl: 'views/index.html'
+            templateUrl: 'views/index.html',
+            controller: 'mainController'
         })
         .when('/parcours', {
             templateUrl: 'views/parcours.html',
