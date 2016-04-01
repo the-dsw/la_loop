@@ -48,7 +48,8 @@ function weatherController($scope, weatherService, userFactory) {
                 });
             });
           
+
         $scope.tbWeather = true;
-        
-        };
+
+    };
 }

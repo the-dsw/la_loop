@@ -7,9 +7,6 @@ function weatherService($http, userFactory) {
         },
         getForecast: function (city) {
             return $http.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+this.apikey+"&units=metric");
-        }
     }
-};
-
-
-   
+    };
+}
