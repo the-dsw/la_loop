@@ -1,10 +1,12 @@
 // WHEATER SERVICE
 function weatherService($http, userFactory) {
     return {
-        getWeather: function (city, apikey) {
-                console.log('city :'+city);
-                console.log('apikey :'+apikey);
-            return $http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID="+apikey+"&units=metric");
+        apikey : "a1763e2ff73afbcfb08b54de766913d2",
+        getWeather: function (city) {
+            return $http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID="+this.apikey+"&units=metric");
+        },
+        getForecast: function (city) {
+            return $http.get("http://api.openweathermap.org/data/2.5/forecast?q="+city+"&APPID="+this.apikey+"&units=metric");
         }
     }
 };
